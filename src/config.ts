@@ -1,3 +1,5 @@
+import { SokobanMap } from "./Sokoban";
+
 const cellSize = 36;
 const playerImage = new Image(cellSize, cellSize);
 const wallImage = new Image(cellSize, cellSize);
@@ -11,7 +13,7 @@ boxImage.src = "images/box.gif";
 inSlotBoxImage.src = "images/box-success.gif";
 slotImage.src = "images/slot.gif";
 
-export const mapsByLevel = {
+export const mapsByLevel: Record<number, SokobanMap> = {
   1: [
     [null, "wall", "wall", "wall", "wall", "wall", null, null, null],
     [null, "wall", null, null, null, "wall", "wall", "wall", "wall"],

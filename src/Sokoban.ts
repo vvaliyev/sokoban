@@ -2,6 +2,8 @@ import { Item, ICoordinate } from "./Item";
 import { MovableItem, Direction } from "./MovableItem";
 
 type BoxState = "IN_SLOT" | "DEFAULT";
+type SokobanMapCell = "wall" | "player" | "slot" | "box" | null;
+export type SokobanMap = Array<SokobanMapCell[]>;
 
 export class Sokoban {
   public player: MovableItem;
@@ -9,7 +11,7 @@ export class Sokoban {
   public walls: Item[] = [];
   public slots: Item[] = [];
 
-  constructor(public map: string[][]) {
+  constructor(public map: SokobanMap) {
     this.map.forEach((row, y) => {
       row.forEach((cell, x) => {
         if (cell === "player") {
