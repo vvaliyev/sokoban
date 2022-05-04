@@ -6,8 +6,10 @@ export class MovableItem<State = never> extends Item {
   // Generic optional state which can be used to store additional information about the item.
   private _state: State;
 
-  constructor(coordinate: ICoordinate) {
+  constructor(coordinate: ICoordinate, state?: State) {
     super(coordinate);
+
+    this._state = state;
   }
 
   public getNextCoordinateByDirection(direction: Direction): ICoordinate {

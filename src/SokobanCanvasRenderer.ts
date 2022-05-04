@@ -2,13 +2,24 @@ import { Sokoban } from "./Sokoban";
 import { renderConfig } from "./config";
 import { Item } from "./Item";
 
+export interface ISokobanCanvasRendererConfig {
+  wallImage: HTMLImageElement;
+  boxImage: {
+    DEFAULT: HTMLImageElement;
+    IN_SLOT: HTMLImageElement;
+  };
+  slotImage: HTMLImageElement;
+  playerImage: HTMLImageElement;
+  cellSize: number;
+}
+
 export class SokobanCanvasRenderer {
   private ctx: CanvasRenderingContext2D;
 
   constructor(
     private sokaban: Sokoban,
     private canvas: HTMLCanvasElement,
-    private config: typeof renderConfig
+    private config: ISokobanCanvasRendererConfig
   ) {
     this.ctx = this.canvas.getContext("2d");
 

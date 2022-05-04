@@ -1,4 +1,5 @@
 import { SokobanMap } from "./Sokoban";
+import { ISokobanCanvasRendererConfig } from "./SokobanCanvasRenderer";
 
 const cellSize = 36;
 const playerImage = new Image(cellSize, cellSize);
@@ -27,7 +28,7 @@ export const mapsByLevel: Record<number, SokobanMap> = {
   ],
 };
 
-export const renderConfig = {
+export const renderConfig: ISokobanCanvasRendererConfig = {
   wallImage,
   boxImage: {
     DEFAULT: boxImage,

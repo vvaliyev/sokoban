@@ -23,7 +23,7 @@ export class Sokoban {
         }
 
         if (cell === "box") {
-          this.boxes.push(new MovableItem({ x, y }));
+          this.boxes.push(new MovableItem<BoxState>({ x, y }, "DEFAULT"));
         }
 
         if (cell === "slot") {

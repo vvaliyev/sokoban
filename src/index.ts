@@ -5,6 +5,7 @@ import { SokobanCanvasRenderer } from "./SokobanCanvasRenderer";
 const canvas = document.querySelector("canvas");
 
 const sokoban = new Sokoban(mapsByLevel[1]);
+
 const sokobanCanvasRenderer = new SokobanCanvasRenderer(
   sokoban,
   canvas,
